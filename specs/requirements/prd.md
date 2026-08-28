@@ -28,25 +28,25 @@ and marks them as exported once handled.
 ## User Stories
 
 1. As an Employee, I want to submit an expense claim with an amount, category,
- date, and description, so that I can request reimbursement.
+date, and description, so that I can request reimbursement.
 2. As an Employee, I want to attach a receipt to my expense claim, so that I
- can provide proof of purchase.
+can provide proof of purchase.
 3. As an Employee, I want to view the status of my submitted claims (pending,
- approved, rejected, exported), so that I know where each one stands.
+approved, rejected, exported), so that I know where each one stands.
 4. As an Employee, I want to edit and resubmit a rejected claim, so that I can
- correct the issue my manager flagged instead of starting over.
+correct the issue my manager flagged instead of starting over.
 5. As a Manager, I want to see the pending expense claims submitted by the
- employees assigned to me, so that I know what needs my review.
+employees assigned to me, so that I know what needs my review.
 6. As a Manager, I want to approve or reject a claim with an optional comment,
- so that the employee understands the decision.
+so that the employee understands the decision.
 7. As a Finance user, I want to see all approved claims, so that I can prepare
- the next payroll export.
+the next payroll export.
 8. As a Finance user, I want to export approved claims as a downloadable file
- (e.g. CSV), so that I can bring them into payroll.
+(e.g. CSV), so that I can bring them into payroll.
 9. As a Finance user, I want exported claims marked as exported, so that they
- are not accidentally exported twice.
+are not accidentally exported twice.
 10. As an Admin, I want to assign a manager to each employee, so that claims
- route to the correct approver.
+route to the correct approver.
 
 ## Product Decisions
 
@@ -59,15 +59,16 @@ inferred or self-selected; a claim routes to whoever the employee's admin-
 assigned manager is.
 - Finance exports approved claims as a downloadable CSV file; there is no
 direct integration with a specific payroll system.
-- A receipt attachment is supported on every claim. *assumed*
+- A receipt attachment is supported on every claim but is optional — a claim
+can be submitted without one.
 - A rejected claim can be edited and resubmitted by the employee rather than
-requiring a brand-new claim. *assumed*
-- Expense claims use a fixed set of categories (e.g. Travel, Meals, Lodging,
-Supplies, Other) rather than free-text categorization. *assumed*
+requiring a brand-new claim.
+- Expense claims use a fixed set of categories: Travel, Meals, Lodging,
+Supplies, Other.
 - All claims are in a single organization-wide currency; no multi-currency
 handling. *assumed*
 - Status-changing actions (submission, approval, rejection) notify the
-relevant actor by email. *assumed*
+relevant actor by email.
 
 ## Out of Scope
 
@@ -83,7 +84,7 @@ employee → manager assignment.
 ## Open Questions
 
 1. Should there be a limit or policy on expense amounts (e.g. per-category
- caps) that triggers a warning or block at submission time?
+caps) that triggers a warning or block at submission time?
 
 ## Further Notes
 
